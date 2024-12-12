@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 60vh;
+}
+
+.slide {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    color: #fff;
+    width: 20vw;
+    flex: 2;
+    cursor: pointer;
+    position: relative;
+    transition: all 700ms ease-in;
+}
+
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay with 40% opacity */
+    z-index: 1; /* Ensure the overlay is above the background image */
+}
+
+.slide:nth-last-of-type(1), .slide:nth-last-of-type(1)::before {
+    border-radius: 0rem 2rem 2rem 0rem;
+    -webkit-border-radius: 0rem 2rem 2rem 0rem;
+    -moz-border-radius: 0rem 2rem 2rem 0rem;
+}
+
+.slide:nth-of-type(1), .slide:nth-of-type(1)::before {
+    border-radius: 2rem 0rem 0rem 2rem;
+    -webkit-border-radius: 2rem 0rem 0rem 2rem;
+    -moz-border-radius: 2rem 0rem 0rem 2rem;
+}
+
+.slide-title {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin: 0;
+    z-index: 2;
+}
+
+.slide.active {
+    flex: 6;
+}
+
+
+@media (max-width: 480px) {
+    .container {
+        width: 100vw;
+        transition: opacity 0.3s ease-in 0.4s;
+    }
+
+}
