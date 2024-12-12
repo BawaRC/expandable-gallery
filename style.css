@@ -25,6 +25,7 @@ body {
     color: #fff;
     width: 30vw;
     flex: 2;
+    overflow: hidden;
     cursor: pointer;
     position: relative;
     transition: all 700ms ease-in;
